@@ -2,18 +2,19 @@ package main
 
 import (
 	"fmt"
-	"github.com/dddpaul/golang-evdev/evdev"
-	"github.com/docopt/docopt-go"
 	"log"
 	"os"
 	"strconv"
 	"time"
+
+	"github.com/dddpaul/golang-evdev/evdev"
+	"github.com/docopt/docopt-go"
 )
 
 func main() {
 	var err error
 
-	err = initConfig("cubied")
+	err = initConfig("mpdir")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -26,9 +27,9 @@ func main() {
 	usage := `MPD IR Control
 
 Usage:
-    cubied
-    cubied devlist
-    cubied scan
+    mpdir
+    mpdir devlist
+    mpdir scan
 `
 
 	arguments, _ := docopt.Parse(usage, nil, true, "MPD IR Control", false)
